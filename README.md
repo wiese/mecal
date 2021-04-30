@@ -13,5 +13,5 @@ Deploy
 
 to a web host pointing to `public`.
 
-A database needs to be set up and configured.
+A database needs to be set up and configured according to the credentials mentioned in `public/groupwareserver.php`.
 
