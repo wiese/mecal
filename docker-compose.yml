@@ -1,0 +1,21 @@
+version: "3"
+
+services:
+  app:
+    build: .
+    ports:
+      - "8000:8000"
+    volumes:
+      - ".:/usr/src/myapp"
+    working_dir: /usr/src/myapp/public
+    command: ["php", "-S", "0.0.0.0:8000"]
+  db:
+    image: mariadb
+    volumes:
+      - ".:/usr/src/myapp"
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: example
+    expose:
+      - "27017"
+    working_dir: /usr/src/myapp/vendor/sabre/dav
