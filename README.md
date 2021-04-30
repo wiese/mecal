@@ -17,3 +17,7 @@ to a web host pointing to `public`.
 
 A database needs to be set up and configured according to the credentials mentioned in `public/groupwareserver.php`.
 
+## Use
+
+Connects to [davdroid/DAVx⁵](https://www.davx5.com/) ([APK via f-droid](https://f-droid.org/en/packages/at.bitfire.davdroid/)).
+
