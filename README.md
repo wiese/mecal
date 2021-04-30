@@ -1,5 +1,7 @@
 # caldav for my personal calendar
 
+`public/groupwareserver.php` is a copy (+ db configuration) of https://github.com/sabre-io/dav/blob/c1afdc7/examples/groupwareserver.php
+
 ## development
 
 `docker-compose up`
