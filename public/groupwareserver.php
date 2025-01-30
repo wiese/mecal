@@ -1,4 +1,8 @@
 <?php
+//ini_set('display_errors', 1);
+//ini_set('display_startup_errors', 1);
+//error_reporting(E_ALL);
+//var_dump($_SERVER);
 
 /**
  * This server combines both CardDAV and CalDAV functionality into a single
@@ -24,7 +28,7 @@ date_default_timezone_set('UTC');
  *
  * This can be for example the root / or a complete path to your server script.
  */
-// $baseUri = '/';
+$baseUri = '/groupwareserver.php';
 
 /**
  * Database
@@ -32,9 +36,8 @@ date_default_timezone_set('UTC');
  * Feel free to switch this to MySQL, it will definitely be better for higher
  * concurrency.
  */
-//$pdo = new \PDO('sqlite:data/db.sqlite');
-//$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 $pdo = new PDO('mysql:dbname=sabredav;host=db', 'root', 'example');
+$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
 /**
  * Mapping PHP errors to exceptions.
@@ -100,3 +103,4 @@ $server->addPlugin(new \Sabre\CardDAV\VCFExportPlugin());
 
 // And off we go!
 $server->exec();
+

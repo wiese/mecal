@@ -10,12 +10,14 @@ services:
     working_dir: /usr/src/myapp/public
     command: ["php", "-S", "0.0.0.0:8000"]
   db:
-    image: mariadb
+    image: mariadb:10.6.4
     volumes:
       - ".:/usr/src/myapp"
     restart: always
     environment:
       MYSQL_ROOT_PASSWORD: example
+      MYSQL_DATABASE: sabredav
     expose:
       - "27017"
     working_dir: /usr/src/myapp/vendor/sabre/dav
+
